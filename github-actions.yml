@@ -1,0 +1,14 @@
+name: Lighthouse
+on:
+  schedule:
+    - cron:  '0 * * * *'
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Lighthouse
+      uses: foo-software/lighthouse-check-action@master
+      with:
+        urls: 'https://www.google.com'
