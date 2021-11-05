@@ -1,7 +1,7 @@
 name: Lighthouse
 on:
   schedule:
-    - cron:  '40 * * * *'
+    - cron:  '40 14 * * *'
 
 jobs:
   lighthouse:
@@ -13,7 +13,7 @@ jobs:
       uses: foo-software/lighthouse-check-action@master
       with:
         outputDirectory: /tmp/artifacts
-        urls: 'https://www.google.com'
+        urls: 'https://www.americastestkitchen.com/,https://www.cookscountry.com/,https://www.cooksillustrated.com/,https://www.americastestkitchen.com/kids/home,https://www.americastestkitchen.com/articles/3991-recipe-brown-butter-soy-crispy-wings-infinite-sauce'
         slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
     - name: Upload artifacts
       uses: actions/upload-artifact@master
