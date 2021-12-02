@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@master
     - run: mkdir /tmp/artifacts
     - name: Lighthouse
-      uses: foo-software/lighthouse-check-action@master
+      uses: foo-software/lighthouse-check-action@v5.1.2
       id: lighthouseCheck
       with:
         outputDirectory: /tmp/artifacts
