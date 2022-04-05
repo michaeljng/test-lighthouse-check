@@ -5,7 +5,7 @@ on:
 
 jobs:
   lighthouse:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
     - run: mkdir /tmp/artifacts
@@ -13,6 +13,7 @@ jobs:
       uses: foo-software/lighthouse-check-action@v5.1.2
       id: lighthouseCheck
       with:
+        device: 'desktop'
         outputDirectory: /tmp/artifacts
         urls: 'https://www.americastestkitchen.com/,https://www.cookscountry.com/,https://www.cooksillustrated.com/,https://www.americastestkitchen.com/kids/home,https://www.americastestkitchen.com/articles/3991-recipe-brown-butter-soy-crispy-wings-infinite-sauce'
         slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
